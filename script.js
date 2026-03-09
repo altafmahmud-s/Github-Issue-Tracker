@@ -40,7 +40,7 @@ function displayIssues(issues) {
         card.className = `bg-white shadow-md rounded-lg p-5 flex flex-col justify-between hover:shadow-lg transition-shadow ${topBorderClass}`;
         
         card.innerHTML = `
-            <div>
+        <div onclick="openCardDetailsModal(${issue.id})" class="cursor-pointer hover:text-blue-600 transition-colors">
                 <div class="flex justify-between items-center mb-4">
                     <div class="flex items-center gap-2">
                         <img src="${issue.status.toLowerCase() === 'open' ? './assets/Open-Status.png' : './assets/Closed- Status .png'}" class="w-5 h-5">
@@ -53,8 +53,7 @@ function displayIssues(issues) {
                     </span>
                 </div>
 
-                <h3 class="font-bold text-lg cursor-pointer hover:text-blue-600 transition-colors line-clamp-2" 
-                    onclick="openCardDetailsModal(${issue.id})">
+                <h3 class="font-bold text-lg line-clamp-2">
                     ${issue.title}
                 </h3>
                 <p class="text-gray-500 text-sm mt-2 line-clamp-3">
@@ -66,17 +65,22 @@ function displayIssues(issues) {
                         `<span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-[10px] font-bold"># ${label}</span>`
                     ).join("")}
                 </div>
+
+
+                <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-end text-xs text-gray-400">
+                  <div>
+                      <p class="font-semibold text-gray-600">By: ${issue.author}</p>
+                     <p>Assignee: ${issue.assignee || 'None'}</p>
+                  </div>
+                  <div class="text-right">
+                    <p>${dateObject}</p>
+                  </div>
+              </div>
+
+
             </div>
 
-            <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-end text-xs text-gray-400">
-                <div>
-                    <p class="font-semibold text-gray-600">By: ${issue.author}</p>
-                    <p>Assignee: ${issue.assignee || 'None'}</p>
-                </div>
-                <div class="text-right">
-                    <p>${dateObject}</p>
-                </div>
-            </div>
+
         `;
         allContainer.appendChild(card);
     });
