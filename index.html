@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github-Issue-Tracker</title>
+    <!-- tailwind+daisy -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+            * {
+                font-family: "Geist", sans-serif;
+            }
+        </style>
+</head>
+<body class="min-h-screen max-w-md bg-base-200 mx-auto sm:p-0">
+
+    <!--logo and title part  -->
+    <div class="logo w-[100px] mx-auto pt-[100px] sm:pt-24  sm:w-28">
+        <img src="./assets/github-logo.png" class="w-full h-auto" alt="">
+        
+    
+    </div>
+
+    <div class="text-center pt-[25px] sm:pt-8 px-2">
+        <h2 class="text-[#1F2937] font-semibold text-[24px]">GitHub Issues Tracker</h2>
+        <p class="text-[#64748B] text-[16px]">Sign in to manage your issues</p>
+    </div>
+
+
+    <!-- form part -->
+
+    <div class="form pt-8  sm:pt-8 w-full px-4">
+        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto rounded-3xl">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label text-neutral font-bold">Username</label>
+                    <input id="input-text" maxlength="11" minlength="11" type="text"
+                        class="input rounded-4xl bg-base-200" placeholder="Enter Username" />
+    
+                    <label class="label text-neutral font-bold pt-4 ">Password</label>
+                    <input id="input-pin" type="password" maxlength="8" minlength="8" class="input rounded-4xl"
+                        placeholder="Enter Password" />
+
+                    <button id="login-btn" class="btn btn-primary rounded-4xl">Login</button>
+                </fieldset>
+            </div>
+        </div>
+
+        <!-- demo part -->
+
+        <div class="text-center bg-[#9eb2c7] rounded-2xl mt-4 sm:mt-5 p-4 sm:p-5 w-full max-w-sm mx-auto">
+            <div class="flex justify-center items-center"><hr class="w-50"> OR
+            <hr class="w-50"></div>
+            
+            <h2 class="text-[#64748B] text-[14px]">Demo Credentials:</h2>
+            <p class="text-[#1F2937] text-[16px] font-semibold">Username:<span>admin</span></p>
+            <p>Password: admin123</p>
+        </div>
+    
+    </div>
+
+    
+    <!-- javaScript sing file -->
+    <script src="./sing.js"></script>
+</body>
+</html>

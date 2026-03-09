@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <style>
+        * { font-family: "Geist", sans-serif; }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <nav>
+            <div
+                class="navbar bg-base-100 shadow-sm flex flex-col sm:flex-row justify-between items-center px-4 py-2 sm:px-10 sm:py-3 gap-3 sm:gap-0">
+                <!-- Logo  part design-->
+                <div class="flex items-center gap-2">
+                    <img class="w-10 h-10" src="./assets/github-logo.png" alt="Logo">
+                    <h2 class="font-bold text-base sm:text-lg">GitHub Issues Tracker</h2>
+                </div>
+
+    
+                <!-- Search  part design -->
+                <div class="flex flex-col sm:flex-row items-center gap-2 w-full sm:w-auto">
+                    <label class="input input-bordered flex items-center gap-2 w-full sm:w-auto">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" id="search-input" placeholder="Search issues..."
+                            class="grow text-sm sm:text-base" />
+                    </label>
+                    <button id="search-btn" class="btn btn-primary text-white w-full sm:w-auto">Search</button>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+
+    <section class="container mx-auto">
+        <div class="mt-10">
+            <!-- button part -->
+            <div class="flex gap-2 mb-8 bg-white shadow-sm p-4 rounded-xl">
+                <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn"
+                    class="bg-[#3B82F6] text-white px-6 py-2 rounded-lg font-medium transition-all cursor-pointer">All</button>
+                <button onclick="toggleStyle('open-filter-btn')" id="open-filter-btn"
+                    class="bg-white text-gray-600 border border-gray-200 px-6 py-2 rounded-lg font-medium transition-all cursor-pointer">Open</button>
+                <button onclick="toggleStyle('closed-filter-btn')" id="closed-filter-btn"
+                    class="bg-white text-gray-600 border border-gray-200 px-6 py-2 rounded-lg font-medium transition-all cursor-pointer">Closed</button>
+            </div>
+        </div>
+    </section>
+
+
+   <!-- all issuse part count -->
+
+
+    <section class="container mx-auto bg-[#E4E4E7] shadow-sm flex justify-between items-center p-6 rounded-t-xl">
+        <div class="flex items-center gap-4">
+            <img class="w-10 h-10" src="./assets/Aperture.png" alt="">
+            <div>
+                <h2 id="issue-count-text" class="text-lg font-semibold">0 Issues</h2>
+                <p class="text-gray-500 text-sm">Track and manage your project issues</p>
+            </div>
+        </div>
+        
+        <div class="flex flex-wrap justify-start sm:justify-start items-center gap-4 sm:gap-8">
+            <div class="flex items-center gap-1">
+                <img class="w-5 h-5 sm:w-6 sm:h-6" src="./assets/Open-Status.png" alt="">
+                <h2 class="text-xs sm:text-sm font-medium">Open</h2>
+            </div>
+            <div class="flex items-center gap-1">
+                <img class="w-5 h-5 sm:w-6 sm:h-6" src="./assets/Closed- Status .png" alt="">
+                <h2 class="text-xs sm:text-sm font-medium">Closed</h2>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="container mx-auto bg-[#FBFBFB] shadow-sm p-8 min-h-[400px]">
+
+        <!-- loading part -->
+
+        <div id="loading-spinner" class="hidden flex justify-center py-20">
+            <span class="loading loading-spinner loading-lg text-primary"></span>
+        </div>
+
+   <!-- all card part -->
+
+        <div id="allContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            </div>
+
+   <!-- card modal part -->
+        <dialog id="card-details-modal" class="modal"></dialog>
+    </section>
+
+    <!-- JavaScript part added -->
+    
+    <script src="./script.js"></script>
+</body>
+</html>
