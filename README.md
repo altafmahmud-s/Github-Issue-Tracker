@@ -2,8 +2,8 @@
 
 <!-- Q-Answer 01 -->
 
-var : can be redeclared, value can be changed (old method)
-let : cannot be redeclared, value can be changed
+var : can be redeclared, value can be changed (old method),
+let : cannot be redeclared, value can be changed,
 const : cannot be redeclared, value can't be changed
 
 2️ What is the spread operator (...)?
