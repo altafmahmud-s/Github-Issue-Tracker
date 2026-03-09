@@ -106,7 +106,7 @@ function toggleStyle(id) {
 
 
 
-// document.addEventListener("DOMContentLoaded", () => {
+
 
     searchBtn.addEventListener("click", async () => {
 
@@ -134,10 +134,7 @@ function toggleStyle(id) {
 
     });
 
-// });
-
-
-
+    
 // searchInput.addEventListener('input', async (e) => {
 //     const query = e.target.value.trim();
 //     if (query === "") {
